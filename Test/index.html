@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>title</title>
+    <meta charset="UTF-8">
+    <script>
+      document.addEventListener('DOMContentLoaded', function(e) {
+        let xDiv = document.querySelector('.x');
+        let xBars = Array.from(xDiv.children);
+        
+        document.addEventListener('mousemove', function(e) {
+          xDiv.style.left = `${e.clientX}px`;
+          xDiv.style.top = `${e.clientY}px`;
+        });
+        
+        document.addEventListener('keydown', function(e) {
+          switch (e.key) {
+            case 'g':
+              xBars.forEach(bar => bar.style.background = 'green');
+              break;
+          }
+        });
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div class="x">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+    </div> 
+  </body>
+  <style>
+    .x {
+      position: absolute;
+      transform: rotate(45deg);
+      top: 20px;
+      left: 20px;
+    }
+
+    .x .horizontal {
+      width: 45px;
+      height: 5px;
+      position: absolute;
+      left: -20px;
+      background: red;
+    }
+
+    .x .vertical {
+      height: 45px;
+      width: 5px;
+      background: red;
+      position: absolute;
+      left: 0px;
+      top: -20px;
+    }
+  </style>
+</html>
