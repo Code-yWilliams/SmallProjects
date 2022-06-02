@@ -1,0 +1,49 @@
+body {
+    background: #999900;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+div {
+  display: block;
+}
+
+#languages {
+  box-sizing: border-box;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 4px;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.view-toggle {
+  display: inline-block;
+  text-decoration: none;
+  background: #990;
+  color: #fff;
+  text-align: center;
+  width: 90px;
+  border-radius: 4px;
+}

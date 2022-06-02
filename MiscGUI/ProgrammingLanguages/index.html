@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Programming Languages</title>
+</head>
+<body>
+  <div id="languages"></div>
+
+  <script id="langs" type="text/x-handlebars" data-type="template">
+    {{#each languages}}
+      {{> lang}}
+    {{/each}}
+  </script>
+  
+  <script id="lang" type="text/x-handlebars" data-type="partial">
+    <div class="lang" data-lang="{{name}}">
+      <h2>{{name}}</h2>
+      <p>{{first120}}</p>
+      {{#over120 description}}
+        <a href="#" class="view-toggle more">View More</a>
+      {{/over120}}  
+    </div>
+  </script>
+</body>
+</html>

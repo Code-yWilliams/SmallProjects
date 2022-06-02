@@ -1,14 +1,7 @@
-let intervalId;
-
-function startCounting() {
-  let number = 1;
-  function logNumber() {
-    console.log(number);
-    number += 1
-  }
-  intervalId = setInterval(logNumber, 1000);
-}
-
-function stopCounting() {
-  clearInterval(intervalId);
-}
+$(function(e) {
+  $('a').on('click', function(e) {
+    let target = $(this);
+    console.log(target.data('block'));
+    $('article').hide().filter(`[data-block=${target.data('block')}]`).show();
+  });
+});

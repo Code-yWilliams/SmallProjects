@@ -1,46 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-  let request = new XMLHttpRequest();
-  request.open('GET', 'https://ls-230-web-store-demo.herokuapp.com/products');
-  let content = document.getElementById('content');
-  request.addEventListener('load', event => {
-    content.innerHTML = event.target.response;
-  });
-  request.send();
+function rewrite() {
+  const h1 = document.createElement('h1');
+  const h1Text = document.createTextNode("The Day's News");
+  h1.appendChild(h1Text);
+  const h2 = document.querySelector('h2');
+  document.body.replaceChild(h1, h2);
 
-  content.addEventListener('click', function(e) {
-    if (e.target.tagName === "A") {
-      e.preventDefault();
-      let href = e.target.getAttribute('href');
-      let request = new XMLHttpRequest();
-      request.open('GET', `https://ls-230-web-store-demo.herokuapp.com${href}`);
-      request.addEventListener('load', function(e) {
-        content.innerHTML = request.response;
-      });
-      request.send();
-    }
-  });
+  const article = document.createElement('article');
+  article.classList.add('breaking');
 
-  content.addEventListener('submit', function(e) {
-    e.preventDefault();
-    let request = new XMLHttpRequest();
-    let form = e.target;
-    let data = new FormData(form);
-    let href = form.getAttribute('action');
-    request.open('POST', `https://ls-230-web-store-demo.herokuapp.com${href}`);
-    request.setRequestHeader('Authorization', 'token AUTH_TOKEN');
-    request.addEventListener('load', function() {
-      content.innerHTML = request.response;
-    });
-    request.send(data);
-  });
+  const fireParagraph = document.createElement('p');
+  const fireParagraphText = document.createTextNode('Fire breaks out at the old factory');
+  fireParagraph.appendChild(fireParagraphText);
+  article.appendChild(fireParagraph);
 
-  let r = new XMLHttpRequest();
-  r.open('POST', 'https://ls-230-web-store-demo.herokuapp.com/v1/products');
-  r.setRequestHeader('Content-Type', 'application/json, charset=utf-8');
-  r.setRequestHeader('Authorization', 'token AUTH_TOKEN')
-  let data = JSON.stringify({ name: 'Cody', sku: 'C3975W', price: 100});
-  r.addEventListener('load', function(e) {
-    console.log('load');
-  });
-  r.send(data);
-});
+  const readMoreParagraph = document.createElement('p');
+  const readMoreAnchor = document.createElement('a');
+  const readMoreAnchorText = document.createTextNode('Read More');
+  readMoreAnchor.appendChild(readMoreAnchorText);
+  readMoreAnchor.setAttribute('href', '/stories/15');
+  readMoreParagraph.appendChild(readMoreAnchor);
+  article.appendChild(readMoreParagraph);
+
+  const frontPageDiv = document.querySelector('.front-page');
+  frontPageDiv.insertAdjacentElement('afterbegin', article);
+}

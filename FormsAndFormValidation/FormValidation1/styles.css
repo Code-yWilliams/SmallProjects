@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fff;
+  font-size: 24px;
+  width: 800px;
+  margin: 70px auto 0 auto;
+}
+body {
+  background: #ADD8E6;
+  font-size: 18px;
+}
+
+form {
+  width: 800px;
+  margin: 15px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.label-container {
+  padding: 20px 0 5px 0;
+}
+
+input {
+  font-size: 18px;
+  width: 300px;
+  height: 38px;
+  padding: 3px 10px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.credit-card-input {
+  width: 75px;
+}
+
+input:focus {
+  border: 2px solid #ADD8E6;
+}
+
+.invalid-field {
+  border: 1px solid #a93333;
+}
+
+button {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 4px;
+  background: #ADD8E6;
+  border: none;
+}
+
+
+.error-message {
+  display: inline-block;
+  margin-left: 30px;
+  color: #a93333;
+}
+
+.form-errors {
+  color: #a93333;
+}
+
+#serialized-data-container {
+  width: 800px;
+  margin: 15px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.serialized-data-wrapper {
+  margin: 15px auto;
+  width: auto;
+  overflow-wrap: normal;
+  word-break:break-all;
+}

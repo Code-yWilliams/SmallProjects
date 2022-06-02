@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Filter</title>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Shit Cars R Us</h1>
+    <div id="filters"></div>
+  </header>
+  
+  <div id="cars">
+
+
+  </div>
+
+  <script id="make-filters" type="text/x-handlebars" data-type="template">
+    <label for="make-select">Make</label>
+    <select name="make-select" id="make-select">
+      <option value="All">All</option>
+      {{#each make}}
+        <option value="{{.}}">{{.}}</option>
+      {{/each}}
+    </select>  
+
+    <label for="model-select">Model</label>
+    <select name="model-select" id="model-select">
+      <option value="All">All</option>
+      {{#each model}}
+        <option value="{{.}}">{{.}}</option>
+      {{/each}}
+    </select>
+
+    <label for="price-select">Price</label>
+    <select name="price-select" id="price-select">
+      <option value="All">All</option>
+      {{#each price}}
+        <option value="{{.}}">{{.}}</option>
+      {{/each}}
+    </select>
+
+    <label for="year-select">Year</label>
+    <select name="year-select" id="year-select">
+      <option value="All">All</option>
+      {{#each year}}
+        <option value="{{.}}">{{.}}</option>
+      {{/each}}
+    </select>
+
+    <button class="filter-btn">Filter</button>
+  </script>
+
+  <script id="make-car" type="text/x-handlebars" data-type="partial">
+    <div class="car">
+      <figure>
+        <img src="{{image}}" alt="{{year}} {{make}} {{model}}">
+      </figure>
+      <h2>Shitty {{make}} {{model}}</h2>
+      <p class="year">Year: {{year}}</p>
+      <p class="price">Price: {{price}}</p>
+      <a href="#">Buy Now</a>
+    </div>
+  </script>
+
+  <script id="make-cars" type="text/x-handlebars" data-type="template">
+    {{#each cars}}
+      {{> make-car}}
+    {{/each}}  
+  </script>
+
+</body>
+</html>

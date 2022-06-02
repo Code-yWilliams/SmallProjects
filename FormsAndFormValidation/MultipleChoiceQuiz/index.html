@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div class="quiz-wrapper">
+    <h1>The Quiz</h1>
+    <p class="form-errors"></p>
+    <form class="form" action="#">
+      <fieldset class="questions">
+
+      </fieldset>
+      <button class="submit-button" type="submit">Submit</button>
+      <button class="reset-button" type="reset" disabled="true">Reset</button>
+    </form>
+  </div>
+  
+<script id="question" class="handlebars" type="text/x-handlebars" data-template-type="partial">
+  <div class="question" data-question-number="{{id}}">
+    <p class="description">Q{{ id }}. {{question}}</p>
+    {{> answer_choices this}}
+    <p class="result"></p>
+  </div>
+</script>
+
+<script id="answer_choices" class="handlebars" type="text/x-handlebars" data-template-type="partial" >
+  {{#each options}}
+    <label>
+      <input type="radio" name="{{../id}}" value="{{this}}">
+      {{this}}
+    </label>
+  {{/each}}
+</script>
+
+<script id="questions" class="handlebars" type="text/x-handlebars" date-template-type="template" >
+  {{#each questions}}
+    {{> question}}
+  {{/each}}  
+</script>
+</body>
+</html>

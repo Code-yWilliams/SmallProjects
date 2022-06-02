@@ -1,0 +1,67 @@
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: no-repeat center url('images/desk.jpg');
+  margin: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 4em;
+  -webkit-text-stroke: 1px black;
+  margin-top: 15px;
+  text-shadow: 2px 2px 8px #3A3B3C;
+}
+
+#editor {
+  width: 50%;
+  height: 70%;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px #3A3B3C;
+  z-index: 5;
+  margin: auto;
+}
+
+#input {
+  position: relative;
+  background: #ffffff;
+  height: 92%;
+  width: 98%;
+  margin: 1%;
+  z-index: 10;
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+#toolbar {
+  background: #3A3B3C;
+  position: relative;
+  height: 6%;
+  width: 100%;
+  align-items: center;
+  z-index: 10;
+}
+
+#toolbar button {
+  position: relative;
+  height: auto;
+  width: auto;
+  border: 0px;
+  margin: 1.5%;
+  background: #ffffff;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#toolbar button:hover {
+  box-shadow: inset 0px 0px 5px #3A3B3C;
+}

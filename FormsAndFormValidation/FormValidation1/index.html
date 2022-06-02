@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="header">Sign Up Form</h1>
+  <form action="#" method="post" class="signup-form" novalidate>
+    <p class="form-errors"></p>
+
+    <div class="label-container">
+      <label for="first_name">First Name</label>
+    </div>
+    <div id="first-name-input-container">
+      <input type="text" name="first_name" required>
+      <span class="error-message"></span>
+    </div>
+
+    <div class="label-container">
+      <label for="last_name">Last Name</label>
+    </div>
+    <div id="last-name-input-container">
+      <input type="text" name="last_name" required>
+      <span class="error-message"></span>
+    </div>
+
+    <div class="label-container">
+      <label for="email">Email</label>
+    </div>
+    <div id="email-input-container">
+      <input type="text" name="email" pattern=".+@.+" placeholder="youremail@example.com" required>
+      <span class="error-message"></span>
+    </div>
+
+    <div class="label-container">
+      <label for="password">Password</label>
+    </div>
+    <div id="password-input-container">
+      <input type="text" name="password" pattern=".{10,}" required>
+      <span class="error-message"></span>
+    </div>
+
+    <div class="label-container">
+      <label for="phone_number">Phone Number</label>
+    </div>
+    <div id="phone-number-input-container">
+      <input type="text" class="digits-only" name="phone_number" pattern="\d{3}-\d{3}-\d{4}" maxlength="12" placeholder="123-456-7890" required>
+      <span class="error-message"></span>
+    </div>
+
+    <div class="label-container">
+      <label for="credit_card">Credit Card Number</label>
+    </div>
+    <div id="credit-card-input-container">
+      <input id="cc1" class="credit-card-input digits-only" type="text" name="credit_card" pattern="\d{4}" maxlength="4" placeholder="****" required>
+      <input id="cc2" class="credit-card-input digits-only" type="text" name="credit_card" pattern="\d{4}" maxlength="4" placeholder="****" required>
+      <input id="cc3" class="credit-card-input digits-only" type="text" name="credit_card" pattern="\d{4}" maxlength="4" placeholder="****" required>
+      <input id="cc4" class="credit-card-input digits-only" type="text" name="credit_card" pattern="\d{4}" maxlength="4" placeholder="****" required>
+      <span class="error-message"></span>
+    </div>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <h1>Serialized Form Data</h1>
+  <div id="serialized-data-container">
+    
+  </div>
+</body>
+</html>
